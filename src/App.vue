@@ -37,23 +37,19 @@ export default {
 <template>
     <div class="container">
 
+        <!-- navigation -->
+        <router-link to="/">Home</router-link> |
+        <router-link to="/features">Features</router-link>
+        <router-view />
+        <button @click="activeTab = 'TabOne'">TabOne</button>
+        <button @click="activeTab = 'TabTwo'">TabTwo</button>
+        <button @click="activeTab = 'TabThree'">TabThree</button>
+
+        <keep-alive>
+            <component :is="activeTab" />
+        </keep-alive>
+
     </div>
-    <!-- navigation -->
-    <router-link to="/">Home</router-link>
-    <router-view />
-    <button @click="activeTab = 'TabOne'">TabOne</button>
-    <button @click="activeTab = 'TabTwo'">TabTwo</button>
-    <button @click="activeTab = 'TabThree'">TabThree</button>
-
-    <keep-alive>
-        <component :is="activeTab" />
-    </keep-alive>
-
-
-    <!-- color generator with data from child to parent -->
-
-    <ColorGenerator :red="red" :blue="blue" :green="green" @generate="generateRand" />
-    <input type="number" name="filter-key" v-model="filterkey" />
 
 </template>
 
