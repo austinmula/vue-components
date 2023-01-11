@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="university_card">
         <h3>{{ university }}</h3>
         <p>{{ country }}</p>
         <p>{{ population }}</p>

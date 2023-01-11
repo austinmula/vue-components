@@ -1,12 +1,9 @@
 <template>
-    <p>Home page</p>
-    <p>{{ filterkey }}</p>
-
-    <button v-on:click="filterdata">Filter</button>
-    <button v-on:click="sortData">Sort</button>
     <h1>{{ topic }}</h1>
-    <UniversityCard v-for="uni in universities" :key="uni.id" :university="uni.university" :country="uni.country"
-        :population="uni.population" />
+    <div class="university_card_container">
+        <UniversityCard v-for="uni in universities" :key="uni.id" :university="uni.university" :country="uni.country"
+            :population="uni.population" />
+    </div>
 </template>
 
 <script>
